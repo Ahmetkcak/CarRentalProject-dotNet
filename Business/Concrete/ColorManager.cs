@@ -36,5 +36,10 @@ namespace Business.Concrete
         {
             _colorDal.Delete(color);
         }
+
+        public List<Color> GetByColorId(int colorId)
+        {
+            return _colorDal.GetAll(c=>c.Id==colorId);
+        }
     }
 }
