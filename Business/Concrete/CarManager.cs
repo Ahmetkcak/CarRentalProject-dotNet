@@ -24,7 +24,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Car>> GetCarsByColorId(int colorId)
         {
-            return new SuccessDataResult<List<Car>>(_carDal.GetAll(c=>c.ColorId==colorId));
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(c=>c.ColorId==colorId),Messages.CarListed);
         }
 
         public IResult Add(Car car)
@@ -50,7 +50,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Car>> GetCarsByBrandId(int brandId)
         {
-            return new SuccessDataResult<List<Car>>(_carDal.GetAll(b=>b.BrandId==brandId), Messages.BrandListed);
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(b=>b.BrandId==brandId), Messages.CarListed);
         }
 
 
