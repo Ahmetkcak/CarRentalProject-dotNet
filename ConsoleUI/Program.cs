@@ -13,6 +13,11 @@ namespace ConsoleUI
             //CarManagerTest();
             //ColorManagerTest();
 
+
+            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            customerManager.Add(new Customer {UserId=2, CompanyName = "%10 indirim" });
+
+
         }
 
 
@@ -25,10 +30,10 @@ namespace ConsoleUI
         {
             ColorManager colorManager = new ColorManager(new EfColorDal());
             colorManager.Add(new Color { ColorName = "Beyaz" });
-            foreach (var item in colorManager.GetAll())
-            {
-                Console.WriteLine(item.ColorName);
-            }
+            //foreach (var item in colorManager.GetAll())
+            //{
+            //    Console.WriteLine(item.ColorName);
+            //}
         }
 
         private static void CarManagerTest()
@@ -39,12 +44,10 @@ namespace ConsoleUI
 
             //carManager.Add(car);
 
-
-
-            foreach (var item in carManager.GetCarDetails())
-            {
-                Console.WriteLine(item.CarId + " " + item.ColorName);
-            }
+            //foreach (var item in carManager.GetCarDetails())
+            //{
+            //    Console.WriteLine(item.CarId + " " + item.ColorName);
+            //}
         }
 
     }
