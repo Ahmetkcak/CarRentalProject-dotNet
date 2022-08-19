@@ -23,13 +23,16 @@ namespace Business.Concrete
 
         public IResult Add(Rental rental)
         {
-            var result = _rentalDal.Get(r => r.CarId == rental.CarId && r.ReturnDate == null);
-            if (rental == null)
-            {
-                _rentalDal.Add(rental);
-                return new SuccessResult(Messages.RentalAdded);
-            }
-            return new ErrorResult(Messages.RentalAddedFailed);
+
+            _rentalDal.Add(rental);
+            return new SuccessResult(Messages.RentalAdded);
+
+            //var result = _rentalDal.Get(r => r.CarId == rental.CarId && r.ReturnDate == DateTime.Now);
+            //if (rental == null)
+            //{
+                
+            //}
+            //return new ErrorResult(Messages.RentalAddedFailed);
         }
 
         public IResult Delete(Rental rental)
@@ -43,9 +46,9 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll(),Messages.RentalListed);
         }
 
-        public IDataResult<List<Rental>> GetByRentalId(int rentalId)
+        public IDataResult<Rental> GetByRentalId(int rentalId)
         {
-            return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll(r=>r.Id == rentalId));
+            return new SuccessDataResult<Rental>(_rentalDal.Get(r=>r.Id == rentalId));
         }
 
         public IResult Update(Rental rental)
