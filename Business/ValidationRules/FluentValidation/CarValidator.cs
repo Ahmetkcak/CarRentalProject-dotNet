@@ -15,13 +15,15 @@ namespace Business.ValidationRules.FluentValidation
             RuleFor(c => c.DailyPrice).GreaterThan(0);
             RuleFor(c => c.DailyPrice).NotEmpty();
             RuleFor(c => c.ModelYear).NotEmpty();
-            RuleFor(c => c.Description).MinimumLength(10).When(c => c.Id == 1);
-            RuleFor(c => c.Description).Must(StartWithB).WithMessage("Ürün açıklaması B ile başlamalı");
+            RuleFor(c=>c.BrandId).NotEmpty();
+            RuleFor(c=>c.ColorId).NotEmpty();
+            //RuleFor(c => c.Description).MinimumLength(10).When(c => c.Id == 1);
+            //RuleFor(c => c.Description).Must(StartWithB).WithMessage("Araba açıklaması B ile başlamalı");
         }
 
-        private bool StartWithB(string arg)
-        {
-            return arg.StartsWith("B");
-        }
+        //private bool StartWithB(string arg)
+        //{
+        //    return arg.StartsWith("B");
+        //}
     }
 }
