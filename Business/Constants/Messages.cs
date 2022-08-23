@@ -42,7 +42,12 @@ namespace Business.Constants
         public static string UserListed = "Kullanıcı listelendi";
 
         public static string CarImageCountExceeded= "Araba resim sayısı limiti aşıldı";
-
         public static string AuthorizationDenied = "Yetkiniz yok";
+
+        internal static string PaymentAdded = "Ödeme eklendi";
+        internal static string PaymentDeleted = "Ödeme silindi";
+        internal static string PaymentUpdated = "Ödeme güncellendi";
+        internal static string GetPaymentByUserId = "Ödeme bilgisi getirildi";
+        internal static string CardNumberMustConsistOfLettersOnly = "Kart numarası sadece rakamlardan oluşur";
     }
 }
