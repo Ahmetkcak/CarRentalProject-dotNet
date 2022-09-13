@@ -44,10 +44,10 @@ namespace Business.Constants
         public static string CarImageCountExceeded= "Araba resim sayısı limiti aşıldı";
         public static string AuthorizationDenied = "Yetkiniz yok";
 
-        internal static string PaymentAdded = "Ödeme eklendi";
-        internal static string PaymentDeleted = "Ödeme silindi";
-        internal static string PaymentUpdated = "Ödeme güncellendi";
-        internal static string GetPaymentByUserId = "Ödeme bilgisi getirildi";
-        internal static string CardNumberMustConsistOfLettersOnly = "Kart numarası sadece rakamlardan oluşur";
+        public static string PaymentAdded = "Ödeme eklendi";
+        public static string PaymentDeleted = "Ödeme silindi";
+        public static string PaymentUpdated = "Ödeme güncellendi";
+        public static string GetPaymentByUserId = "Ödeme bilgisi getirildi";
+        public static string CardNumberMustConsistOfLettersOnly = "Kart numarası sadece rakamlardan oluşur";
     }
 }
